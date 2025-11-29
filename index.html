@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleet management-Login</title>
+    <link rel="stylesheet"href="styles.css"/>
+</head>
+<body class=""page-login">
+    <main class=""login-container">
+        <div class=""card login-card">
+        <h1>fleet management app</h1>
+        <p class="muted">please login to continue</p>
+        <form id="loginform"class="form">
+            <label>email</label>
+            <input id="email" type="email" required />
+            <label>password</label>
+            <input id="password" type="password" required />
+            <button class="btn primary">login</button>
+        </form>
+        <div id="loginmessage" class="muted small"></div>
+    </div>
+    </main>
+    <script> 
+        document.getElementById('loginform').addEventListener('submit',function(e){
+            e.preventDefault();
+            const
+            email=document.getElementById('email').value.trim()
+            const
+            pass=document.getElementById('password').value.trim()
+            const
+            msg=document.getElementById('loginmessage');
+            if(email==='admin@gmail.com'&&pass==='admin1234'){
+                localStorage.setItem('fleet_logged_in','true');
+                location.href='admin.html';
+
+            }else{
+                msg.textContent='Invalid credentials';
+                msg.style.color='#c0392b';
+            }
+        }
+    );
+    </script>
+    
+</body>
+</html>

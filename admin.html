@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flet management- admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-admin">
+    <header class="navbar">
+        <div class="brand">Fleet Management</div>
+        <div class="filters">
+            <label>
+            category:
+            <select
+            id="filtercategory">
+            <option 
+            value="all">ALL</option>
+            <option
+            value="car">car</option>
+            <option
+            value="auto">Auto</option>
+            <option
+            value="truck">truck</option>
+            <option
+            value="bus">bus</option>
+        </select>
+
+        </label>
+        <label> Availability:
+            <select
+            id="filterAvilability">
+        <option
+        value="all">All</option>
+        <option
+        value="avilable">avilable</option>
+    
+    </select>
+        </label>
+        <button id="clearfilters"
+        class="btn">clear</button>
+        <button id ="logoutbtn" 
+        class="btn danger">Logout</button>
+    </div>
+    </header>
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>Add Fleet</h2>
+            <form id="fleetform"
+            class="form">
+            <label>reg no </label>
+            <input id="regno"
+            type="text" required />
+            <label>category</label>
+            <select id="category"required>
+                <option 
+                value="">select </option>
+                <option 
+                value="car">car</option>
+                <option 
+                value="auto">auto</option>
+                <option 
+                value="truck">truck</option>
+                <option 
+                value="bus">bus</option>
+            </select>
+            <label> driver name</label>
+            <input id="drivername" type="text" />
+            <label>Availability</label>
+            <select id="Availability">
+                <option
+                value="avilable">avilable</option>
+                <option
+                value="unavilable">unavilable</option>
+            </select>
+            <label>Image URL</label>
+            <input id="imgurl" type="text" />
+            <div class="actions">
+                <button class="btn primary">Add Fleet</button>
+                <button id="resetform" type="button"
+                class="btn">clear</button>
+            </div>
+        </form>
+        </aside>
+        <main class="main-content">
+            <h2>Fleet cards</h2>
+            <div id="cardscontainer" 
+            class="cards-grid"></div>
+        </main>
+    </div>
+    
+</body>
+</html>
